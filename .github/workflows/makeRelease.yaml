@@ -1,0 +1,29 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+"
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build_linux:
+    name: Build Binary for Linux
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      - run: cargo build --release --target x86_64-unknown-linux-gnu
+      - run: mkdir release
+      - run: mv target/x86_64-unknown-linux-gnu/release/elite-pip-macro .
+      - run: tar -czvf elite-pip-macro.tar.gz elite-pip-macro
+      - uses: ncipollo/release-action@v1
+        with:
+          artifacts: "elite-pip-macro.tar.gz"
+          allowUpdate: true
