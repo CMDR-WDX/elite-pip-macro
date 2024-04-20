@@ -1,6 +1,6 @@
 use std::{
     sync::{Arc, Condvar, Mutex},
-    thread::{self, spawn},
+    thread::{self, sleep, spawn},
     time::Duration,
 };
 
@@ -13,6 +13,10 @@ pub struct Settings {
     pub sys: (Key, Key),
     pub eng: (Key, Key),
     pub wep: (Key, Key),
+    /// one can optionally enable a feature where pressing and depressing the first key will both press the second key
+    ///
+    /// Useful for half-boosting
+    pub landing_gear_switch: Option<(Key, Key)>,
 }
 
 pub(crate) fn run_command(settings: Settings) {
@@ -162,6 +166,15 @@ fn callback(
 
                 println!("New active state: {}", new_state);
             }
+        } else if settings.landing_gear_switch.is_some()
+            && settings.landing_gear_switch.unwrap().0 == key
+            && (*key_state).enabled
+        {
+            println!("Received Landing Gear Press");
+            let landing_gear_button = settings.landing_gear_switch.unwrap().1;
+            send_key_event(&EventType::KeyPress(landing_gear_button));
+            sleep(Duration::from_millis(20));
+            send_key_event(&EventType::KeyRelease(landing_gear_button));
         } else {
             return;
         }

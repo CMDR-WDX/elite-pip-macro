@@ -22,6 +22,9 @@ fn main() {
         out_sys: None,
         out_eng: None,
         out_wep: None,
+        in_landing_gear: None,
+        out_landing_gear: None,
+        use_gear: false,
     });
 
     match command {
@@ -53,6 +56,9 @@ fn main() {
             out_sys,
             out_eng,
             out_wep,
+            in_landing_gear,
+            out_landing_gear,
+            use_gear,
         } => {
             let in_sys = in_sys.map_or(Key::Num1, key_from_code);
             let out_sys = out_sys.map_or(Key::LeftArrow, key_from_code);
@@ -61,10 +67,20 @@ fn main() {
             let in_wep = in_wep.map_or(Key::Num3, key_from_code);
             let out_wep = out_wep.map_or(Key::RightArrow, key_from_code);
 
+            let mut gear = None;
+
+            if in_landing_gear.is_some() || out_landing_gear.is_some() || use_gear {
+                let in_gear = out_landing_gear.map_or(Key::CapsLock, key_from_code);
+                let out_gear = in_landing_gear.map_or(Key::KeyG, key_from_code);
+
+                gear = Some((in_gear, out_gear))
+            }
+
             run_command(Settings {
                 sys: (in_sys, out_sys),
                 eng: (in_eng, out_eng),
                 wep: (in_wep, out_wep),
+                landing_gear_switch: gear,
             })
         }
     }
