@@ -25,6 +25,7 @@ Make sure `~/.cargo/bin` is in your `$PATH` (or call it directly: `~/.cargo/bin/
 
 See *Requirements* Section above in case the build fails because of system dependencies.
 
+### From AUR
 you can also install from the [aur pakage](https://aur.archlinux.org/packages/elite-pip-macro)
 if you are using paru:
     ``paru elite-pip-macro``
