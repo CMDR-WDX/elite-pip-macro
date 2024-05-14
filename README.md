@@ -27,7 +27,7 @@ See *Requirements* Section above in case the build fails because of system depen
 
 you can also install from the [aur pakage](https://aur.archlinux.org/packages/elite-pip-macro)
 if you are using paru:
-    `paru elite-pip-macro`
+    ``paru elite-pip-macro``
 
 note: this will compile the pakage from source if you are using older hardware / do not want to compile the program then please use the binary provide in this repo (a binary aur pakage will be made at some point). 
 
