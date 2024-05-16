@@ -6,7 +6,7 @@
 This is a tool which will listen for Presses on certain keys (1-3 by default), and will then spam other keys (left, top and right arrow by default) as long as those keys are pressed.
 The "spamming" will only take place if
 - the active window is Elite: Dangerous (the window name is `steam_app_359320`)
-- the Tool is active (you can toggle this py pressing ` - ` on the numpad)
+- the Tool is active (you can toggle this by pressing ` - ` on the numpad)
 
 ## Requirements 
 Assumes X11 / Linux. No support for Mac / Windows / whatever.
@@ -25,21 +25,36 @@ Make sure `~/.cargo/bin` is in your `$PATH` (or call it directly: `~/.cargo/bin/
 
 See *Requirements* Section above in case the build fails because of system dependencies.
 
-### From AUR
+# From AUR
+
+## Binary Install 
+
+Alternatively you can install the binary [AUR](https://aur.archlinux.org/packages/elite-pip-macro-bin) package.
+
+### Paru
+```
+paru -S elite-pip-macro-bin
+```
+### Yay
+```
+yay -S elite-pip-macro-bin
+``` 
+
+## From source
+
 You can also install from the [AUR](https://aur.archlinux.org/packages/elite-pip-macro).
 
-
-# Paru
+### Paru
 ```
 paru -S elite-pip-macro
 ```
-# Yay
+### Yay
 ```
 yay -S elite-pip-macro
 ``` 
 
 > [!NOTE]  
-> This will compile the package from source. If you do not want to compile the program, then please use the binary provided under  [Releases](https://github.com/CMDR-WDX/elite-pip-macro/releases)
+> This will compile the package from source. If you do not want to compile the program, then please use the binary provided under  [Releases](https://github.com/CMDR-WDX/elite-pip-macro/releases) or the binary [AUR](https://aur.archlinux.org/packages/elite-pip-macro-bin) package.
 
 ## Usage
 by default the Macro is set up to 
