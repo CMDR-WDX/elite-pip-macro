@@ -29,7 +29,7 @@ See *Requirements* Section above in case the build fails because of system depen
 You can also install from the [AUR](https://aur.archlinux.org/packages/elite-pip-macro).
 
 
-#Paru
+# Paru
 ```
 paru -S elite-pip-macro
 ```
