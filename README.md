@@ -28,13 +28,15 @@ See *Requirements* Section above in case the build fails because of system depen
 ### From AUR
 You can also install from the [AUR](https://aur.archlinux.org/packages/elite-pip-macro).
 
-\```
-# Paru
+
+#Paru
 ```
 paru -S elite-pip-macro
+```
 # Yay
+```
 yay -S elite-pip-macro
-\``` 
+``` 
 
 > [!NOTE]  
 > This will compile the package from source. If you do not want to compile the program, then please use the binary provided under  [Releases](https://github.com/CMDR-WDX/elite-pip-macro/releases)
