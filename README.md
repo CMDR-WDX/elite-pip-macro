@@ -26,11 +26,18 @@ Make sure `~/.cargo/bin` is in your `$PATH` (or call it directly: `~/.cargo/bin/
 See *Requirements* Section above in case the build fails because of system dependencies.
 
 ### From AUR
-you can also install from the [aur package](https://aur.archlinux.org/packages/elite-pip-macro)
-if you are using paru:
-    ``paru elite-pip-macro``
+You can also install from the [AUR](https://aur.archlinux.org/packages/elite-pip-macro).
 
-note: this will compile the package from source if you are using older hardware / do not want to compile the program then please use the binary provide in this repo (a binary aur package will be made at some point). 
+\```
+# Paru
+```
+paru -S elite-pip-macro
+# Yay
+yay -S elite-pip-macro
+\``` 
+
+> [!NOTE]  
+> This will compile the package from source. If you do not want to compile the program, then please use the binary provided under  [Releases](https://github.com/CMDR-WDX/elite-pip-macro/releases)
 
 ## Usage
 by default the Macro is set up to 
